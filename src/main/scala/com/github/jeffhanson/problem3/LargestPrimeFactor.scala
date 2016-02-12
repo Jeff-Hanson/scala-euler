@@ -23,7 +23,7 @@ object LargestPrimeFactor {
    */
   def getPrimeFactors( num: Long, div: Long ): List[Long] = {
     require( num > 0 && div > 0 )
-    println(s"getting factors ${num} using ${div}")
+    // println(s"getting factors ${num} using ${div}")
     if ( num < div ) List()
     else
      (num % div) match {
