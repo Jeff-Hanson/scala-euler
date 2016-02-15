@@ -9,7 +9,7 @@ object SumSquareDiff {
    */
   def findSumSquareDiff( x: Int ): Int = {
     require(x > 0)
-    Math.pow( List.range(1,x+1).sum.toDouble, 2.0 ).toInt - List.range(1,x+1).map( x => x * x ).sum
+    Math.pow( Vector.range(1,x+1).sum.toDouble, 2.0 ).toInt - Vector.range(1,x+1).map( x => x * x ).sum
   }
 
 }

@@ -6,7 +6,6 @@ import scala.annotation.tailrec
 
 object LargestPalindrome {
   def findLargestPalindrome( ): Int = {
-    var counter: Int = 0
        /**
         * Find the largest palindrome recursively
         * x and y are factors of the palindrome and found is the largest palindrome found so far
@@ -18,7 +17,7 @@ object LargestPalindrome {
         */
        @tailrec
        def findPal( x: Int, y: Int, found: Int): Int = {
-          
+          require( x > 0 && y > 0 && found > -1 )
           val num = x * y
           // As an optimization check if we are already less than one we have found previously 
           if ( num <= found )

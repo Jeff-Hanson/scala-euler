@@ -15,6 +15,7 @@ object SumOfPrimes {
       sum: Long,
       isPrime: (Int,Vector[Int]) => Boolean, 
       termCriteria: Int => Boolean ): Long = {
+     require( next > 0 && sum > 0 )
      
      if( termCriteria(next) ) 
        sum
@@ -32,6 +33,7 @@ object SumOfPrimes {
    * next number to test and a sum.
    */
   def findSum( num: Int ):Long = {
+    require( num > 0 )
     primeSum( 5, Vector(2,3), 5, (x,xs) => xs.filter(k => k*k <= x).forall( y => x % y != 0 ), z => z > num )
   }
   

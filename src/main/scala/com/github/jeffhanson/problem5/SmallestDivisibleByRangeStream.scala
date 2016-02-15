@@ -8,7 +8,7 @@ import scala.annotation.tailrec
  * (smallest) guess that satisfies the factor criteria.
  */
 object SmallestDivisibleByRangeStream {
-    val divisors = List.range(2,21)
+    val divisors = Vector.range(2,21)
         
     // create stream to use for guesses
     lazy val guesses: Stream[Int] = {

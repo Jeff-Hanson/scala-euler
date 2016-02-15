@@ -16,9 +16,9 @@ object PythagoreanTripletAndSum {
    */
   def findSumAndPythagTriplet( x: Int, f: (Int,Int,Int) => Option[Int] ): Int = {  
 		  val ans = for {
-			  a <- List.range(3,x)
-			  b <- List.range(3,x)
-			  c <- List.range(3,x)
+			  a <- Vector.range(3,x)
+			  b <- Vector.range(3,x)
+			  c <- Vector.range(3,x)
 			  (x) <- f( a, b, c )
 		  } yield( x )
 		  ans.head

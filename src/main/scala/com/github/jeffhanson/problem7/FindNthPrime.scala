@@ -8,8 +8,8 @@ object FindNthPrime {
    */
   def findPrimeByIndex( x: Int ): Int = {
     def sieve(s: Stream[Int]): Stream[Int] = {
-    val s2 = s.tail.filter( _ % s.head != 0 )
-    s.head #:: sieve(s2)
+    //val s2 = s.tail.filter( _ % s.head != 0 )
+    s.head #:: sieve(s.tail.filter( _ % s.head != 0 ))
     }
     
     sieve(Stream.from(2))(x-1)
