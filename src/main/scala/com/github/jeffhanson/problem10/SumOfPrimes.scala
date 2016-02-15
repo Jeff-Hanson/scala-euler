@@ -11,17 +11,17 @@ object SumOfPrimes {
    */
   def primeSum( 
       next: Int, 
-      found: List[Int],
+      found: Vector[Int],
       sum: Long,
-      isPrime: (Int,List[Int]) => Boolean, 
+      isPrime: (Int,Vector[Int]) => Boolean, 
       termCriteria: Int => Boolean ): Long = {
      
      if( termCriteria(next) ) 
        sum
      else
-       if ( isPrime(next,List(2,3,5,7)) && isPrime(next, found) ) {
+       if ( isPrime(next,Vector(2,3,5,7)) && isPrime(next, found) ) {
          // println(s"next = ${next} sum = ${sum}")
-         primeSum( next + 1, next :: found, next + sum, isPrime, termCriteria )
+         primeSum( next + 1,  found :+ next, next + sum, isPrime, termCriteria )
        }
        else 
          primeSum( next + 1, found, sum, isPrime, termCriteria )
@@ -32,7 +32,7 @@ object SumOfPrimes {
    * next number to test and a sum.
    */
   def findSum( num: Int ):Long = {
-    primeSum( 5, List(2,3), 5, (x,xs) => xs.filter(k => k*k <= x).forall( y => x % y != 0 ), z => z > num )
+    primeSum( 5, Vector(2,3), 5, (x,xs) => xs.filter(k => k*k <= x).forall( y => x % y != 0 ), z => z > num )
   }
   
 }
